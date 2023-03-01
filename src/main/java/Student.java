@@ -10,7 +10,9 @@ public class Student implements Cloneable{
 
     // DEFAULT CONSTRUCTOR
     public Student(){
-
+        this.firstName = "";
+        this.lastName = "";
+        this.faculty = "";
     }
 
     // CONSTRUCTOR WITH PARAMETERS

@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReaderFromFile {
+public class ReaderCSV {
     public static final String SEPARATOR = ",";
 
     public Student read(String str){

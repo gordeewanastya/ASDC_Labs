@@ -20,6 +20,8 @@ public class Main {
         Searcher.resultOfSearchByIDNP(Searcher.linearSearch(students,studentIDNPtoSearch), students);
         System.out.println("___Binary Search:___");
         Searcher.resultOfSearchByIDNP(Searcher.binarySearch(students,studentIDNPtoSearch),students);
+        System.out.println("___Interpolation Search:___");
+        Searcher.resultOfSearchByIDNP(Searcher.interpolationSearch(students, studentIDNPtoSearch), students);
         System.out.println("___Fibonacci Search:___");
         Searcher.resultOfSearchByIDNP(Searcher.fibonacciSearch(students, studentIDNPtoSearch), students);
 

@@ -46,9 +46,37 @@ public class Searcher {
 
 
     public static int interpolationSearch(List<Student> studentList, Long studentIDNP){
+        int low = 0;
+        int high = studentList.size() - 1;
+
+        while (low <= high && studentIDNP >= studentList.get(low).getIdentificationNumber()
+                && studentIDNP <= studentList.get(high).getIdentificationNumber()) {
+            if (low == high) {
+                if (studentList.get(low).getIdentificationNumber() == studentIDNP) {
+                    return low;
+                } else {
+                    return -1;
+                }
+            }
+
+            int pos = low + ((int) (((double) (high - low) / (studentList.get(high).getIdentificationNumber()
+                    - studentList.get(low).getIdentificationNumber()))
+                    * (studentIDNP - studentList.get(low).getIdentificationNumber())));
+
+            if (studentList.get(pos).getIdentificationNumber() == studentIDNP) {
+                return pos;
+            } else if (studentList.get(pos).getIdentificationNumber() < studentIDNP) {
+                low = pos + 1;
+            } else {
+                high = pos - 1;
+            }
+        }
+
         return -1;
     }
 
+    // Time complexity: O(log(N))
+    // Space complexity: O(4) ???
     public static int fibonacciSearch(List<Student> studentList, Long studentIDNP){
         /*Size of collection*/
         int listSize = studentList.size();

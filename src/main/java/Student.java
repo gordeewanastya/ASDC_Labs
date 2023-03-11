@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Student implements Cloneable{
+public class Student implements Cloneable,Comparable<Student>{
     private String firstName;
     private String lastName;
     private String faculty;
@@ -71,6 +71,8 @@ public class Student implements Cloneable{
         return new Student(firstName,lastName,faculty,yearOfBirth,yearOfAdmission,identificationNumber);
     }
 
+
+
     // GETTERS AND SETTERS
 
     public String getFirstName() {
@@ -131,5 +133,10 @@ public class Student implements Cloneable{
                 ", yearOfAdmission=" + yearOfAdmission +
                 ", identificationNumber=" + identificationNumber +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Student other) {
+        return Long.compare(this.getIdentificationNumber(),other.getIdentificationNumber());
     }
 }

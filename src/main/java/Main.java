@@ -25,5 +25,9 @@ public class Main {
         System.out.println("___Fibonacci Search:___");
         Searcher.resultOfSearchByIDNP(Searcher.fibonacciSearch(students, studentIDNPtoSearch), students);
 
+        System.out.println("___Binary Tree Search:___");
+        BinarySearchTree tree = new BinarySearchTree();
+        students.stream().forEach(stud -> tree.insert(stud));
+        tree.resultOfBinaryTreeSearch(tree.search(studentIDNPtoSearch),studentIDNPtoSearch);
     }
 }

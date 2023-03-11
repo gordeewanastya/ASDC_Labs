@@ -44,6 +44,8 @@ public class Searcher {
         return -1;
     }
 
+    // Time complexity: O(log2(log2 N))
+    // Space complexity: O(1)
 
     public static int interpolationSearch(List<Student> studentList, Long studentIDNP){
         int low = 0;
